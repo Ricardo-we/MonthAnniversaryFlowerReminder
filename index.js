@@ -6,6 +6,7 @@ const onLoad = () => {
   const today = new Date();
   let months = (today.getFullYear() - initialDate.getFullYear()) * 12;
   months += today.getMonth() - initialDate.getMonth();
+  months -= (today.getDate() - initialDate.getDate()) >= 0 ? 0 : 1
 
   if(today.getDate() === 15) {
     timeCounterAnnounce.innerHTML = `¡Hoy cumplimos un mes más Mi Belen!`;
